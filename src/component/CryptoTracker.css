@@ -1,0 +1,97 @@
+.body{
+   margin: 0;
+   padding: 0;
+}
+.search-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.search-container>h1{
+   
+  background: -webkit-linear-gradient(246deg, rgb(243, 178, 178) 33%, rgba(247,255,111,1) 66%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.search-bar{
+   width: 250px;
+   padding: 10px;
+   border-radius: 10px;
+   border-style: none;
+   margin-right: 10px;
+}
+.search-btn{
+
+      background-image: linear-gradient(to right, #c21500 0%, #ffc500  51%, #c21500  100%);
+      margin: 10px;
+      padding: 8px 25px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;            
+      box-shadow: 0 0 20px #eee;
+      border-radius: 10px;
+      border-style: none;
+}
+.search-btn:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+}
+
+.crypto-card{
+   background-color:#FAFBFE;
+   width: 250px;
+   height: 280px;
+   padding: 15px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 10px;
+   margin: 15px;
+}
+
+.card-img{
+   text-align: center;
+   margin-top: 5px;
+}
+.crypto-name{
+   text-align: center;
+   margin-top: -10px;
+}
+.crypto-name>p{
+   font-weight: 500;
+}
+.crypto-name >h2 {
+   margin-top: -10px;
+}
+.crypto-data p{
+   font-weight: 500;
+   font-size:13.5px;
+   margin-bottom: 20px;
+}
+.btn-link{
+            
+      background-image: linear-gradient(to right, #642B73 0%, #C6426E  51%, #642B73  100%);
+      margin: auto;
+      padding: 10px 20px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;            
+      box-shadow: 0 0 20px #eee;
+      border-radius: 10px;
+      display: block;
+      border-style: none;
+}
+
+ .btn-link:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+}
+
+         
+         
