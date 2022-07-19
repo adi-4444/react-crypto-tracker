@@ -48,7 +48,7 @@
 .crypto-card{
    background-color:#FAFBFE;
    width: 250px;
-   height: 280px;
+   height: 300px;
    padding: 15px;
    display: flex;
    flex-direction: column;
@@ -60,6 +60,9 @@
 .card-img{
    text-align: center;
    margin-top: 5px;
+}
+.icon{
+   height: 65px;
 }
 .crypto-name{
    text-align: center;
@@ -75,6 +78,7 @@
    font-weight: 500;
    font-size:13.5px;
    margin-bottom: 20px;
+   margin-left: 23px;
 }
 .btn-link{
             
@@ -90,6 +94,7 @@
       border-radius: 10px;
       display: block;
       border-style: none;
+      text-decoration: none;
 }
 
  .btn-link:hover {

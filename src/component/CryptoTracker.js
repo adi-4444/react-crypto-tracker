@@ -5,36 +5,42 @@ import './CryptoTracker.css'
 const CryptoTracker = () => {
 
    const [data, setData] = useState("")
-
+   const [search, setSearch] = useState("")
+ 
    useEffect(() => {
       axios.get("https://api.coinstats.app/public/v1/coins?skip=0&currency=USD")
       .then (res => setData(res.data.coins))
       console.log(data)
    },[])
 
-
-
+   const handler = (e) => {
+      e.preventDefault()
+      setSearch(e.target.value)
+   }
 
   return (
-    <div>
+   <>
       <div className='search-container'>
          <h1>Crypto Tracker</h1>
-         <input className='search-bar' type={"text"} placeholder={"Search CryptoCurrency"}/>
+         <input className='search-bar' type={"text"} placeholder={"Search CryptoCurrency"} 
+         onChange={handler}
+         />
       </div>
 
+      <div>
          {
             data.length>0 && 
             <>
-               {data.map(crypto => 
-                  <DataCard key={crypto.id} name={crypto.name} rank={crypto.rank} price={crypto.price}
-                  marketcap={crypto.marketCap}
+               {data.filter(crypto => crypto.name.toLowerCase().includes(search.toLowerCase()))
+               .map(crypto => 
+                  <DataCard key={crypto.id} name={crypto.name} img={crypto.icon} rank={crypto.rank} price={crypto.price}
+                  marketcap={crypto.marketCap} weburl={crypto.websiteUrl}
                   />
                   )}
             </>
          }
-      
-
-    </div>
+      </div>
+    </>
   )
 }
 
@@ -42,13 +48,13 @@ export default CryptoTracker;
 
 
 
-export const DataCard = ({name,rank,price,marketcap}) => {
+export const DataCard = ({name,img,rank,price,marketcap,weburl}) => {
   return (
     <div className='crypto-wrap'>
          <div className='crypto-card'>
 
              <div className='card-img'>
-                <img src='https://static.coinstats.app/coins/1650455588819.png'/>
+                <img className='icon' src={img} alt={name}/>
              </div>
 
              <div className='card-data'>
@@ -61,7 +67,7 @@ export const DataCard = ({name,rank,price,marketcap}) => {
                     <p>MarkatCap : {marketcap} </p>
                   </div>
                 
-                <button className='btn-link'>Go to Website</button>
+                <a href={weburl} target={"_blank"} className='btn-link'>Go to Website</a>
              
              </div>
 
